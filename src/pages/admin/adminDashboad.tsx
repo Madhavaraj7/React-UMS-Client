@@ -1,6 +1,4 @@
 import { useCallback, useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { RootState } from "../../redux/store";
 import { useNavigate } from "react-router-dom";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
