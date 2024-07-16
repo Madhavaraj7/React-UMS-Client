@@ -16,7 +16,6 @@ type User = {
 const AdminDashboard = () => {
   const [users, setUsers] = useState<User[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
-  const admin = useSelector((state: RootState) => state.admin);
   const navigate = useNavigate();
 
   const getAllUsers = useCallback(async () => {

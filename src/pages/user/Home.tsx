@@ -1,14 +1,18 @@
 import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store"; // Assuming RootState is where you define your Redux state
 
 const Home = () => {
+  const { currentUser } = useSelector((state: RootState) => state.user);
 
-  const {currentUser} = useSelector((state) =>state.user)
-
+  // Ensure currentUser is defined before accessing its properties
+  if (!currentUser) {
+    return null; // or loading indicator, depending on your UI/UX needs
+  }
 
   return (
     <div className='px-4 py-12 max-w-2xl mx-auto text-center mt-10'>
       <h1 className='text-4xl font-extrabold mb-6 text-slate-800'>
-        Welcome to {currentUser.username}
+        Welcome to UMS
       </h1>
       <p className='mb-6 text-lg text-slate-700 leading-relaxed'>
         This is a full-stack web application built with the MERN (MongoDB,

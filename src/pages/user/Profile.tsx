@@ -32,7 +32,7 @@ function Profile() {
   const [imagePercent, setImagePercent] = useState(0);
   const [imageError, setImageError] = useState(false);
   const [formData, setFormData] = useState<Partial<User>>({});
-  const [updateSuccess, setUpdateSuccess] = useState(false);
+  const [, setUpdateSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const fileRef = useRef<HTMLInputElement>(null);
