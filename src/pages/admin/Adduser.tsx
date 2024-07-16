@@ -31,7 +31,7 @@ function AddUser() {
       setSubmitting(true);
 
       try {
-        const response = await fetch('http://localhost:3000/api/admin/add-user', {
+        const response = await fetch(import.meta.env.VITE_APP_BACKEND_ENV+ '/api/admin/add-user', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

@@ -21,7 +21,7 @@ const AdminDashboard = () => {
 
   const getAllUsers = useCallback(async () => {
     try {
-      const response = await fetch(`http://localhost:3000/api/admin/get-users`,{
+      const response = await fetch(import.meta.env.VITE_APP_BACKEND_ENV+ `/api/admin/get-users`,{
        credentials: "include"
       });
       if (!response.ok) {
@@ -43,7 +43,7 @@ const AdminDashboard = () => {
   const handleDelete = async (userId: string) => {
     if (window.confirm("Are you sure you want to delete this user?")) {
       try {
-        const response = await fetch(`http://localhost:3000/api/admin/delete-user/${userId}`, { method: 'DELETE' });
+        const response = await fetch(import.meta.env.VITE_APP_BACKEND_ENV + `/api/admin/delete-user/${userId}`, { method: 'DELETE' });
         if (!response.ok) {
           throw new Error("Failed to delete user");
         }

@@ -19,7 +19,7 @@ const EditUser = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:3000/api/admin/edit-user/${user._id}`, {
+      const response = await fetch(import.meta.env.VITE_APP_BACKEND_ENV + `/api/admin/edit-user/${user._id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

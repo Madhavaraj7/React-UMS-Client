@@ -37,7 +37,7 @@ const Signup: React.FC = () => {
 
   const handleSubmit = async (values: FormValues, { setSubmitting }: FormikHelpers<FormValues>) => {
     try {
-      const res = await fetch('http://localhost:3000/api/auth/signup', {
+      const res = await fetch(import.meta.env.VITE_APP_BACKEND_ENV+ '/api/auth/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

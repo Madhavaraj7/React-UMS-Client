@@ -25,7 +25,7 @@ function Header() {
 
   const handleSignOut = async () => {
     try {
-      await fetch('http://localhost:3000/api/auth/signout');
+      await fetch(import.meta.env.VITE_APP_BACKEND_ENV + '/api/auth/signout');
       dispatch(signOut());
     } catch (error) {
       console.log(error);

@@ -39,7 +39,7 @@ const AdminLogin: React.FC = () => {
     dispatch(signInStart());
 
     try {
-      const res = await fetch('http://localhost:3000/api/admin/admin-login', {
+      const res = await fetch(import.meta.env.VITE_APP_BACKEND_ENV + '/api/admin/admin-login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

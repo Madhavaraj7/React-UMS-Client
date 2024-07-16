@@ -85,7 +85,7 @@ function Profile() {
     setLoading(true);
     try {
       dispatch(updateUserStart());
-      const res = await fetch(`http://localhost:3000/api/user/update/${currentUser._id}`, {
+      const res = await fetch(import.meta.env.VITE_APP_BACKEND_ENV+ `/api/user/update/${currentUser._id}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -115,7 +115,7 @@ function Profile() {
 
   const handleSignOut = async () => {
     try {
-      await fetch('http://localhost:3000/api/auth/signout');
+      await fetch(import.meta.env.VITE_APP_BACKEND_ENV+ '/api/auth/signout');
       dispatch(signOut())
     } catch (error) {
       console.log(error);
